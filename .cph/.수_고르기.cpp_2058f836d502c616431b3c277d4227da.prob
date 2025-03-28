@@ -1,0 +1,1 @@
+{"name":"Local: 수_고르기","url":"/home/clip968/Desktop/programming/algorithm/수_고르기.cpp","tests":[{"id":1742530282213,"input":"2\n6 5\n8 6 1 4 2 3\n7 4\n89 36 33 53 63 83 52","output":"5\n6"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/clip968/Desktop/programming/algorithm/수_고르기.cpp","group":"local","local":true}
