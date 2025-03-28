@@ -1,0 +1,1 @@
+{"name":"Local: 마트료시카정렬","url":"d:\\vscode\\algorithm\\마트료시카정렬.cpp","tests":[{"id":1743141503060,"input":"2\n4\n3 3 3 2\n4\n3 2 3 2","output":"3\n3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\vscode\\algorithm\\마트료시카정렬.cpp","group":"local","local":true}
