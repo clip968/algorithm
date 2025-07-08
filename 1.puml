@@ -1,0 +1,54 @@
+@startuml
+' --- 기본 설정 ---
+left to right direction ' 다이어그램 방향 설정 (왼쪽에서 오른쪽으로)
+skinparam packageStyle rectangle ' 시스템 경계를 사각형으로 명확히 표시
+
+' --- 액터 정의 ---
+actor 사용자 as User
+
+' --- 시스템 경계 및 유스케이스 정의 ---
+rectangle "위스키 앱" {
+  usecase "1. 위스키 취향 입력" as UC1
+  usecase "2. 위스키 추천받기" as UC2
+  usecase "3. 저장한 위스키 목록 확인" as UC3
+  usecase "4. 최근 조회 위스키 목록 확인" as UC4
+  usecase "5. 전체 위스키 목록 보기" as UC5
+  usecase "6. 위스키 목록 필터링" as UC6
+  usecase "7. 위스키 목록 정렬" as UC7
+  usecase "8. 위스키 평가 노트 작성" as UC8
+  usecase "9. 유사 위스키 찾기" as UC9
+  usecase "10. 위스키 상세 정보 보기" as UC10
+
+  ' Include 관계를 위한 보조 유스케이스
+  usecase "(공통) 위스키 기본 정보 표시" as UC_DisplayInfo
+}
+
+' --- 액터와 유스케이스 연관 관계 ---
+' 사용자는 앱의 모든 주요 기능을 시작할 수 있음
+User --> UC1
+User --> UC2
+User --> UC3
+User --> UC4
+User --> UC5
+User --> UC6 (필터링은 목록 보기 중 발생하므로 직접 연결 X)
+User --> UC7 (정렬은 목록 보기 중 발생하므로 직접 연결 X)
+User --> UC8 (노트 작성은 상세 보기 중 발생하므로 직접 연결 X)
+User --> UC9 (유사 찾기는 상세 보기 중 발생하므로 직접 연결 X)
+User --> UC10 
+
+' --- Include 관계 ---
+' 추천받기, 유사 찾기, 상세 보기는 반드시 기본 정보 표시 기능을 포함함
+UC2 ..> UC_DisplayInfo : <<include>>
+UC9 ..> UC_DisplayInfo : <<include>>
+UC10 ..> UC_DisplayInfo : <<include>>
+
+' --- Extend 관계 ---
+' 목록 보기(UC5) 중 선택적으로 필터링(UC6) 또는 정렬(UC7) 가능
+UC6 ..> UC5 : <<extend>>
+UC7 ..> UC5 : <<extend>>
+
+' 상세 보기(UC10) 중 선택적으로 노트 작성(UC8) 또는 유사 위스키 찾기(UC9) 가능
+UC8 ..> UC10 : <<extend>>
+UC9 ..> UC10 : <<extend>>
+
+@enduml
