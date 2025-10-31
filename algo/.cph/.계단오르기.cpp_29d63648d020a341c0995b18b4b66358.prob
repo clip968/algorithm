@@ -1,0 +1,1 @@
+{"name":"Local: 계단오르기","url":"/home/clip968/Desktop/programming/algo/계단오르기.cpp","tests":[{"id":1741924940040,"input":"2\n6 1\n6 2","output":"3\n4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/clip968/Desktop/programming/algo/계단오르기.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: 마트료시카정렬하기","url":"/home/clip968/Desktop/programming/algo/마트료시카정렬하기.cpp","tests":[{"id":1743138689307,"input":"2\n4\n3 3 3 2\n4\n3 2 3 2","output":"3\n3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/clip968/Desktop/programming/algo/마트료시카정렬하기.cpp","group":"local","local":true}

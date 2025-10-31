@@ -2,23 +2,25 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "C/C++ Runner: Debug Session",
+      "name": "C/C++: g++ 디버그",
       "type": "cppdbg",
       "request": "launch",
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
       "args": [],
       "stopAtEntry": false,
-      "externalConsole": true,
-      "cwd": "d:/vscode/algorithm",
-      "program": "d:/vscode/algorithm/build/Debug/outDebug",
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "externalConsole": false,
       "MIMode": "gdb",
-      "miDebuggerPath": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
           "text": "-enable-pretty-printing",
           "ignoreFailures": true
         }
-      ]
+      ],
+      "preLaunchTask": "C/C++: g++ 활성 파일 빌드"
     }
   ]
 }

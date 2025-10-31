@@ -7,6 +7,7 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
+                "-std=c++17",
                 "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
@@ -22,6 +23,37 @@
                 "isDefault": true
             },
             "detail": "디버거에서 생성된 작업입니다."
+        },
+        {
+            "type": "shell",
+            "label": "C/C++: 빌드 후 실행",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-std=c++17",
+                "-O2",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "&&",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "detail": "컴파일 후 바로 실행합니다.",
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "clear": true
+            }
         }
     ],
     "version": "2.0.0"
